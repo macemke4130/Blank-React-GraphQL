@@ -1,5 +1,6 @@
 import express from 'express';
-import * as path from 'path';
+import path from 'path';
+const __dirname = path.resolve();
 import { graphqlHTTP } from 'express-graphql';
 import cors from 'cors';
 import { schema, root } from "./graphql.js";
