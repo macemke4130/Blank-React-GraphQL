@@ -5,6 +5,9 @@ import cors from 'cors';
 import { schema, root } from "./graphql.js";
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, 'client/build')));
+
 app.use(cors());
 app.use(express.json());
 app.use('/graphql', graphqlHTTP({
@@ -18,7 +21,7 @@ app.get('/greeting', function (req, res, next) {
 });
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '/client/build/index.html'));
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
   });
 
 const port = process.env.PORT || 3001;
