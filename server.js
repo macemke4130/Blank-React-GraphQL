@@ -1,11 +1,11 @@
 import express from 'express';
 import path from 'path';
-const __dirname = path.resolve();
 import { graphqlHTTP } from 'express-graphql';
 import cors from 'cors';
 import { schema, root } from "./graphql.js";
 
 const app = express();
+const __dirname = path.resolve();
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
